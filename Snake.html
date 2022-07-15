@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Snake</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="css/DefaultStyle.css">
+    <link rel="stylesheet" href="css/Header.css">
+    <link rel="stylesheet" href="css/Snake.css">
+</head>
+<body>
+    <header>
+       <nav>
+          <a class="home" href="index.html">
+             <img src="img/HomeIcon.png" alt="" class="headerIcon" />
+             <div>home</div>
+          </a>
+          <div class="partition"></div>
+          <a class="game" href="CubeAndFood.html">
+             <img src="img/GameIcon.png" alt="" class="headerIcon"/>
+             <div>Cube and Food</div>
+          </a>
+          <div class="partition"></div>
+          <a class="game actived" href="Snake.html">
+             <img src="img/GameIcon.png" alt="" class="headerIcon"/>
+             <div>Snake</div>
+          </a>
+       </nav>
+    </header>
+    <div class="wrapperGame">
+         <div class="gameOverScreen">
+            <h1 style="font-size: 4em; margin-top: 100px;">Игра окончена</h1>
+            <h2 style="font-size: 2em; margin-top: 50px;" class="GameOverScore">Ваш счёт: 0</h2>
+            <button onclick="location.reload();" style="margin-top: 100px;">Заново</button>
+         </div>
+        <div class="PlayField"><div class="BlockOnFlayField blockPlayField"></div></div>
+        <div class="score">
+           <span>Счёт: </span>
+           <span class="score_number">0</span>
+        </div>
+    </div>
+    <script src="js/SnakeScript.js"></script>
+</body>
+</html>

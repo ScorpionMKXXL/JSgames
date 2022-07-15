@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Cube and Food</title>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" href="#" type="image/x-icon">
+      <link rel="stylesheet" href="css/DefaultStyle.css">
+      <link rel="stylesheet" href="css/Header.css">
+      <link rel="stylesheet" href="css/CubeAndFoodStyle.css">
+      <div class="diceOnThePlayingField" style="display: none;"></div>
+   </head>
+   <body>
+      <header>
+         <nav>
+            <a class="home" href="index.html">
+               <img src="img/HomeIcon.png" alt="" class="headerIcon" />
+               <div>Home</div>
+            </a>
+            <div class="partition"></div>
+            <a class="game actived" href="CubeAndFood.html">
+               <img src="img/GameIcon.png" alt="" class="headerIcon"/>
+               <div>Cube and Food</div>
+            </a>
+            <div class="partition"></div>
+            <a class="game" href="Snake.html">
+               <img src="img/GameIcon.png" alt="" class="headerIcon"/>
+               <div>Snake</div>
+            </a>
+         </nav>
+      </header>
+      <div class="wrapper">
+         <div class="gameoverScreen">
+            <h1 style="font-size: 50px;">Игра окончена</h1>
+            <div>
+               <span style="font-size: 30px;">Ваш счёт: </span>
+               <span class="GameOverScore" style="font-size: 30px; color: #ee0;">0</span>
+            </div>
+            <button class="restartHTML" onclick="location.reload();">Начать игру</button>
+         </div>
+         <div class="wrapperGame"></div>
+         <div class="gameplaySidebar">
+            <div class="gameplaySidebar_counter">Счёт: 0</div>
+            <div class="gameplaySidebar_speed"></div>
+            <div class="gameplaySidebar_levelSpeedUp">До повышения скорости: 9</div>
+         </div>
+      </div>
+      <script src="js/CubeAndFoodScript.js"></script>
+   </body>
+</html>

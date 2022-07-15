@@ -1,0 +1,53 @@
+.wrapperGame {
+    position: relative;
+    height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+:root {
+    --PlayFieldColor: #ccc;
+    --SnakeHeadColor: #0b0;
+    --SnakeTailColor: #050;
+    --Food: #a00;
+    --Height: 800px;
+    --Width: 1600px;
+    --BlockOnPlayfieldSize: 50px;
+}
+.PlayField {
+    height: var(--Height);
+    width: var(--Width);
+    background: var(--PlayFieldColor);
+    outline: 2px solid #000;
+    display: flex;
+    flex-wrap: wrap;
+}
+.BlockOnFlayField {
+    height: var(--BlockOnPlayfieldSize);
+    width: var(--BlockOnPlayfieldSize);
+}
+.score {
+    top: 25px;
+    right: 25px;
+    position: absolute;
+    font-size: 2em;
+}
+.gameOverScreen {
+    display: none;
+    position: absolute;
+    background-color: #ccc9;
+    margin: 0 auto;
+    height: var(--Height);
+    width: var(--Width);
+}
+.gameOverScreen > button {
+    width: 200px;
+    height: 50px;
+    font-size: 2em;
+}
+.gameOverScreen > * {margin: 0 auto; display: block; width: fit-content; }
+.blockPlayField { background-color: var(--PlayFieldColor); }
+.blockSnakeHead { background-color: var(--SnakeHeadColor); }
+.blockSnakeTail { background-color: var(--SnakeTailColor); }
+.blockFood { background-color: var(--Food); border-radius: 50%; }
+.blockSnakeHead, .blockSnakeTail { border-radius: 20px; }

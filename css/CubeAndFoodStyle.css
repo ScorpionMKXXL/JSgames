@@ -1,0 +1,57 @@
+:root {
+   --heightScreenInGame: 800px;
+   --WidthScreenInGame: 800px;
+   --playerSize: 40px;
+}
+.wrapper {
+   position: relative;
+   height: calc(100vh - 120px);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.wrapperGame {
+   position: relative;
+   height: var(--heightScreenInGame);
+   width: var(--WidthScreenInGame);
+   outline: 3px solid #aba;
+   display: flex;
+   flex-wrap: wrap;
+}
+.diceOnThePlayingField {
+   display: inline-block;
+   margin: 0;
+   height: var(--playerSize);
+   width: var(--playerSize);
+}
+.gameplaySidebar {
+   position: absolute;
+   right: 0;
+   top: 50%;
+   transform: translateY(-50%);
+   height: 400px;
+   width: 150px;
+   margin-left: 20px;
+   font-size: 20px;
+}
+.gameplaySidebar_counter, .gameplaySidebar_speed, .gameplaySidebar_levelSpeedUp { margin-bottom: 10px; }
+.gameoverScreen {
+   position: absolute;
+   height: var(--heightScreenInGame);
+   width: var(--WidthScreenInGame);
+   background-color: #888;
+   z-index: 1;
+   display: none;
+   flex-direction: column;
+   align-items: center;
+}
+.restartHTML {
+   position: absolute;
+   bottom: 20px;
+   font-size: 20px;
+   height: 50px;
+   width: 200px;
+}
+.Field {background:rgba(1, 0, 0, 0.3)}
+.Food {background:rgba(0, 55, 0, 0.5)}
+.Player {background:rgba(0, 0, 55, 0.5)}
