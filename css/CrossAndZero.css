@@ -1,0 +1,87 @@
+:root {
+    --CrossColor:        #f00;  /* Цвет крестика */
+    --ZeroColor:         #00f;  /* Цвет нолика */
+    --FieldSize:           500px; /* Размер поля px* */
+    --FieldBorderColor:  #333;  /* Цвет рамки */
+}
+.wrapperGame {
+    position: relative;
+    height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gameScreen {
+    border: 1px solid var(--FieldBorderColor);
+    width: var(--FieldSize);
+    height: var(--FieldSize);
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+.gameBlock {
+    border: 1px solid var(--FieldBorderColor);
+    position: relative;
+}
+.INgameBlock_Cross::after, .INgameBlock_Cross::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 10px;
+    left: calc(50% - 5px);
+    border-radius: 10px;
+    background-color: var(--CrossColor);
+}
+.INgameBlock_Cross::after { transform: rotate(45deg); }
+.INgameBlock_Cross::before { transform: rotate(-45deg); }
+
+.INgameBlock_Zero::after {
+    content: '';
+    position: absolute;
+    height: 70%;
+    width: 70%;
+    left: calc(15% - 10px);
+    top: calc(15% - 10px);
+    border-radius: 50%;
+    border: 10px solid var(--ZeroColor);
+}
+.line {
+    position: absolute;
+    height: calc(var(--FieldSize) + 50px);
+    width: 10px;
+    background-color: #f00;
+    transform: rotate(90deg);
+}
+/* Навигационная панель */
+
+.navGame{
+    position: absolute;
+    left: 10px;
+    width: 300px;
+    height: 500px;
+    background-color: #eee;
+    border: 1px solid #999;
+}
+.navGame_Score_border {
+    display: inline-block;
+    position: relative;
+    top: -3px;
+}
+.navGame_Score {
+    text-align: center;
+    height: 50px;
+}
+.navGame_P1, .navGame_P2{
+    font-size: 1.2em;
+}
+.navGame_P1 { color: var(--CrossColor); }
+.navGame_P2 { color: var(--ZeroColor); }
+.navGame_ButStart {
+    position: absolute;
+    bottom: 10px;
+    left: calc(50% - 60px);
+    height: 50px;
+    width: 120px;
+    border: 1px solid #999;
+    text-transform: uppercase;
+    font-weight: 600;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Snake</title>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="shortcut icon" href="#" type="image/x-icon">
+   <link rel="stylesheet" href="css/DefaultStyle.css">
+   <link rel="stylesheet" href="css/Header.css">
+   <link rel="stylesheet" href="css/CrossAndZero.css">
+</head>
+<body>
+   <header>
+      <nav>
+         <a class="home" href="index.html">
+            <img src="img/HomeIcon.png" class="headerIcon" />
+            <div>home</div>
+         </a>
+         <div class="partition"></div>
+         <a class="game" href="CubeAndFood.html">
+            <img src="img/GameIcon.png" class="headerIcon"/>
+            <div>Cube and Food</div>
+         </a>
+         <div class="partition"></div>
+         <a class="game" href="Snake.html">
+            <img src="img/GameIcon.png" class="headerIcon"/>
+            <div>Snake</div>
+         </a>
+         <div class="partition"></div>
+         <a class="game actived" href="CrossAndZero.html">
+            <img src="img/GameIcon.png" class="headerIcon"/>
+            <div>Cross and Zero</div>
+         </a>
+      </nav>
+   </header>
+   <div class="wrapperGame">
+      <div class="navGame">
+         <h2 class="navGame_Score">
+            <span class="navGame_P1">{{score.P1}}</span>
+            <span class="navGame_Score_border">|</span>
+            <span class="navGame_P2">{{score.P2}}</span>
+         </h2>
+         <div class="gamemode">
+            <input disabled v-model="settings.gamemode" value="1" type="radio" name="Gamemode" id="GAMEMODE1">
+            <label for="GAMEMODE1"> Игра с AI </label><br>
+            <input :disabled="settings.inputDisabled" v-model="settings.gamemode" value="2" type="radio" name="Gamemode" id="GAMEMODE2">
+            <label for="GAMEMODE2"> Игра на двоих </label>
+         </div>
+         <h2 class="PlayerIsPlaying" style="margin-left: 10px;">Играет игрок:
+            <span :style="{color: score.color}">{{settings.Playing}}</span>
+         </h2>
+         <button :disabled="settings.inputDisabled" @click="setupGamemode()" class="navGame_ButStart">Начать игру</button>
+      </div>
+      <div class="gameScreen" v-html="html"></div>
+      <div v-if="border.view" class="line"
+         :style="{
+            top : border.top,
+            left : border.left,
+            transform : border.rotate
+         }"
+      ></div>
+   </div>
+   <script src="./js/Vue/vueImport.js"></script>
+   <script src="./js/CrossAndZero.js"></script>
+</body>
+</html>
